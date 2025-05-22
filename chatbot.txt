@@ -1,0 +1,4 @@
+- create a webapp
+- using pinecone db
+- create dummy values
+- create an agent using OpenAI to query the DB
