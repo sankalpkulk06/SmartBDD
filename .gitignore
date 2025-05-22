@@ -1,0 +1,42 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environment variables
+.env
+
+# Jupyter Notebooks checkpoint folders
+.ipynb_checkpoints
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# Python packaging
+*.egg-info/
+*.egg
+dist/
+build/
+
+# IDEs / Editors
+.vscode/
+.idea/
+
+# Logs and local data
+*.log
+*.sqlite
+*.db
+
+# Output files
+# *.json
+# data/test_cases_with_summaries.json
+# data/test_cases.json
+
+# Node modules
+node_modules/
