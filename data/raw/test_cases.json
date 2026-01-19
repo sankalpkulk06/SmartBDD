@@ -281,5 +281,50 @@
       "And The total order price should be <total_price>"
     ],
     "summary": "Verifies that a logged-out customer can log in during checkout, complete the order, and see the correct product and price."
+  },
+  {
+    "id": "TC-020",
+    "filename": "28_Log_in_with_correct_credentials_duplicate.feature",
+    "gherkin": "# language: en\nFeature: Log in with correct credentials\n\n\tScenario: Log in with correct credentials\n\t\tGiven I created an account with gender \"F\" firstName \"Mary\" lastName \"Smith\" email \"marysmith@example.com\" password \"smitty4life\" birthDate \"01/01/2000\" partnerOffers \"yes\" newsletter \"yes\"\n\t\tAnd I am logged out\n\t\tAnd I am on the \"Login\" page\n\t\tWhen I log in with email \"marysmith@example.com\" and password \"smitty4life\"\n\t\tThen I can see firstName and lastName \"Mary Smith\" in the top right corner",
+    "steps": [
+      "Given I created an account with gender \"F\" firstName \"Mary\" lastName \"Smith\" email \"marysmith@example.com\" password \"smitty4life\" birthDate \"01/01/2000\" partnerOffers \"yes\" newsletter \"yes\"",
+      "And I am logged out",
+      "And I am on the \"Login\" page",
+      "When I log in with email \"marysmith@example.com\" and password \"smitty4life\"",
+      "Then I can see firstName and lastName \"Mary Smith\" in the top right corner"
+    ],
+    "summary": "Validates that a user can log in with correct credentials and their name appears correctly on the interface."
+  },
+  {
+    "id": "TC-021",
+    "filename": "29_Update_the_product_quantity_in_the_cart_duplicate.feature",
+    "gherkin": "# language: en\nFeature: Update the product quantity in the cart\n\n\tScenario: Update the product quantity in the cart\n\t\tGiven I am logged in\n\t\tAnd The cart contains\n\t\t\t| Product | Number |\n\t\t\t| Mug The best is yet to come | 5 |\n\t\t\t| Illustration vectorielle Renard | 1 |\n\t\tAnd I am on the \"Cart\" page\n\t\tWhen I update product quantities to\n\t\t\t| Product | Number |\n\t\t\t| Mug The best is yet to come | 3 |\n\t\t\t| Illustration vectorielle Renard | 4 |\n\t\tThen The cart should contain\n\t\t\t| Product | Number | UnitPrice | TotalProductPrice |\n\t\t\t| Mug The best is yet to come | 3 | 14,28 | 42,84 |\n\t\t\t| Illustration vectorielle Renard | 4 | 10,80 | 43,20 |\n\t\tAnd The total number of products should be \"7\" and the total price should be \"86,04\"",
+    "steps": [
+      "Given I am logged in",
+      "And The cart contains",
+      "And I am on the \"Cart\" page",
+      "When I update product quantities to",
+      "Then The cart should contain",
+      "And The total number of products should be \"7\" and the total price should be \"86,04\""
+    ],
+    "summary": "Tests that updating the quantities of products in the cart correctly recalculates the total and product prices."
+  },
+  {
+    "id": "TC-022",
+    "filename": "30_Cannot_place_an_order_if_the_sale_conditions_are_not_approved_duplicate.feature",
+    "gherkin": "# language: en\nFeature: Cannot place an order if the sale conditions are not approved\n\n\tScenario: Cannot place an order if the sale conditions are not approved\n\t\tGiven I created an account with gender \"M\" firstName \"john\" lastName \"doe\" email \"johndoe@mail.com\" password \"pass1234\" birthDate \"01/01/1950\" partnerOffers \"yes\" newsletter \"yes\"\n\t\tAnd I am logged in with email \"johndoe@mail.com\" and password \"pass1234\"\n\t\tAnd The cart contains\n\t\t\t| Product | Number |\n\t\t\t| Mug The best is yet to come | 3 |\n\t\t\t| Illustration vectorielle Renard | 2 |\n\t\tAnd I am on the \"Cart\" page\n\t\tWhen I initiate order placement process\n\t\tAnd I fill command form with alias \"add1\" company \"\" vat \"\" address \"1 rue du chat\" supp \"\" zip \"12345\" city \"Paris\" country \"France\" phone \"\" and facturation \"yes\" and submit\n\t\tAnd I choose delivery \"prestashop\" and command message \"\"\n\t\tAnd I pay by paymode \"virement bancaire\" and choose approveSalesConditions \"no\"\n\t\tThen I should still be on the \"Order\" page\n\t\tAnd The submit order button should be disabled",
+    "steps": [
+      "Given I created an account with gender \"M\" firstName \"john\" lastName \"doe\" email \"johndoe@mail.com\" password \"pass1234\" birthDate \"01/01/1950\" partnerOffers \"yes\" newsletter \"yes\"",
+      "And I am logged in with email \"johndoe@mail.com\" and password \"pass1234\"",
+      "And The cart contains",
+      "And I am on the \"Cart\" page",
+      "When I initiate order placement process",
+      "And I fill command form with alias \"add1\" company \"\" vat \"\" address \"1 rue du chat\" supp \"\" zip \"12345\" city \"Paris\" country \"France\" phone \"\" and facturation \"yes\" and submit",
+      "And I choose delivery \"prestashop\" and command message \"\"",
+      "And I pay by paymode \"virement bancaire\" and choose approveSalesConditions \"no\"",
+      "Then I should still be on the \"Order\" page",
+      "And The submit order button should be disabled"
+    ],
+    "summary": "Ensures that an order cannot be placed if the user does not accept the sales conditions; the submit button remains disabled."
   }
 ]

@@ -1,0 +1,19 @@
+{"a": "TC-010", "b": "TC-011", "label": "dup", "reason": "Exact duplicate: same feature and scenario. TC-010 from '... (1).feature' and TC-011 from '...feature'; identical steps (add customizable product with message to cart, Mug personnalisable, Joyeux anniversaire) and intent."}
+{"a": "TC-007", "b": "TC-020", "label": "dup", "reason": "Exact duplicate: TC-020 is a copied feature file of TC-007 (log in with correct credentials). Same steps, same assertions, same intent."}
+{"a": "TC-015", "b": "TC-021", "label": "dup", "reason": "Exact duplicate: TC-021 copies the cart quantity update scenario from TC-015 with identical steps and expected totals."}
+{"a": "TC-017", "b": "TC-022", "label": "dup", "reason": "Exact duplicate: TC-022 is a copy of TC-017 (cannot place order without sales conditions). Same checkout steps and disabled submit assertion."}
+{"a": "TC-001", "b": "TC-002", "label": "not_dup", "reason": "Account creation fails: invalid email vs password too short. Same 4-step pattern (AccountCreation, fill+submit, stay, error on field) but different field and acceptance criteria."}
+{"a": "TC-001", "b": "TC-003", "label": "not_dup", "reason": "Account creation fails: invalid email vs privacy/GDPR not checked. Same structure, different validation (email_txt vs privacy_cb/gdpr_cb)."}
+{"a": "TC-002", "b": "TC-003", "label": "not_dup", "reason": "Account creation fails: password too short vs privacy/GDPR not checked. Same flow, different fields and rules."}
+{"a": "TC-003", "b": "TC-005", "label": "not_dup", "reason": "Privacy/GDPR: account creation fails vs account modification fails. Same rule, different context (AccountCreation vs MyIdentity) and steps."}
+{"a": "TC-007", "b": "TC-008", "label": "not_dup", "reason": "Login: success with correct credentials vs failure with incorrect password. Same preconditions and Login page; opposite outcomes and assertions."}
+{"a": "TC-009", "b": "TC-010", "label": "not_dup", "reason": "Add to cart: one product (no customization, logged in) vs one product with customized message (logged out). Different product type, customization step, and login state."}
+{"a": "TC-010", "b": "TC-014", "label": "not_dup", "reason": "Both use Mug personnalisable and customize: TC-010 adds to cart successfully; TC-014 asserts message truncation when too long. Different intent and Then clause."}
+{"a": "TC-009", "b": "TC-012", "label": "not_dup", "reason": "Add one product vs add two products to cart. Different scenario (single vs multiple products)."}
+{"a": "TC-015", "b": "TC-016", "label": "not_dup", "reason": "Cart: update product quantities vs remove a product. Both modify cart contents; different action and assertion."}
+{"a": "TC-017", "b": "TC-018", "label": "not_dup", "reason": "Order: cannot place when sales conditions not approved vs place order when approved. Same checkout flow up to approveSalesConditions; opposite choice and outcome."}
+{"a": "TC-018", "b": "TC-019", "label": "not_dup", "reason": "Place order: logged-in customer vs logged-out (login during checkout). Different entry state and steps (e.g. fill login form in TC-019)."}
+{"a": "TC-004", "b": "TC-006", "label": "not_dup", "reason": "Create account vs modify account. Both succeed; different flow (creation+login vs MyIdentity update) and assertion."}
+{"a": "TC-001", "b": "TC-017", "label": "not_dup", "reason": "Account creation fail (invalid email) vs cannot place order (sales conditions). Different domain and flow."}
+{"a": "TC-004", "b": "TC-009", "label": "not_dup", "reason": "Create account vs add one product to cart. Different domain."}
+{"a": "TC-012", "b": "TC-014", "label": "not_dup", "reason": "Add two products to cart vs customized message too long. Different intents and flows."}
